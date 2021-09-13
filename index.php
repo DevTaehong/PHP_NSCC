@@ -9,8 +9,8 @@
             <?php
                 $number1 = 10;
                 $number2 = 52;
-                echo "the meaning of life is" . ($number1 + $number2);
-                ?>
+                echo "the meaning of life is" .  ($number1 + $number2);
+            ?>
         </p>
     </body>
 </html>
