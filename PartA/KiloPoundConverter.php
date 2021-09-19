@@ -15,16 +15,16 @@
 		        $kilosResult = $_POST['kilos'];
 		        
 		        $poundsResult = $kilosResult * 2.2;
-		        
-		        echo "<p>" + $kilosResult + " kilos equals " + $poundResult + " pounds.</p>";
+
+		        echo "<p>" . $kilosResult . " kilos equals " . $poundsResult . " pounds.</p>"; //was $poundResult and concantartion wasn't correct
 		    }
-		    elseif (!isset($_POST['ConverttoKilos']))
+		    elseif (isset($_POST['ConverttoKilos'])) // here was !isset($_POST['ConverttoKilos'...
 		    {
-		    	$poundsResult = $_POST['pound'];
+		    	$poundsResult = $_POST['pounds']; // was pound
 		    
 		    	$kilosResult = $poundsResult / 2.2;
 		    	
-		    	echo "<p>" + $poundsResult + " pounds equals " + $kilosResult + " kilos.</p>";
+		    	echo "<p>" . $poundsResult . " pounds equals " . $kilosResult . " kilos.</p>"; //concantartion wasn't correct
 		    }
 		    else
 		    {
