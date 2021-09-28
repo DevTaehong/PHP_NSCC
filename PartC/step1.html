@@ -5,11 +5,12 @@
         <title>Step 1</title>
     </head>
     <body>
-        <form action="processForm.php" method="post">
+        <form action="step1.php" method="post" enctype="multipart/form-data">
             <p>First Name:<input type="text" name="fName" /></p>
             <p>Last Name:<input type="text" name="lName" /></p>
             <p>Height in feet:<input type="text" name="fHeight" /></p>
             <p>Height in inches:<input type="text" name="iHeight" /></p>
+            <p>Picture:<input type="file" name="userImage" /></p>
             <p><input type="submit" name="Submit" value="Send Form"/></p>
         </form>
     </body>
