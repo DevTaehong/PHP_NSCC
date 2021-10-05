@@ -3,7 +3,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-    if (isset($_POST['target']) && isset($_POST['guess']))
+    if (isset($_POST['target']) && isset($_POST['guess'])) // has any date been posted/submitted
     {
         $numberTarget = $_POST['target'];
         $numberGuessed = $_POST['guess']; // was  target....
@@ -21,7 +21,8 @@
     }
     else
     {
-        $message = "Welcome to my guessing game!";
+        $numberGuessed = "";
+        $message = "Welcome to my guessing game!";//assume that this page is loading in for the first time
         $numberTarget = rand(1,100);
     }
 ?>
@@ -33,9 +34,9 @@
         <h1>
             <?php print $message ?>
         </h1>
-        <form action="<?php $_SERVER['PHP_SELF'] ?>"  method="post" name="guessinggame">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>"  method="post" name="guessinggame">
             <p>Number:
-                <input name="guess" type="text">
+                <input name="guess" type="text" value="<?php echo $numberGuessed ?>">
             </p>
             <p>
                 <input type="hidden" name="target" value="<?php echo $numberTarget ?>">
