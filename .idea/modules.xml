@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../Form_Validation_Resources/.idea/Form_Validation_Resources.iml" filepath="$PROJECT_DIR$/../../../Form_Validation_Resources/.idea/Form_Validation_Resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab2/PartA/.idea/PartA.iml" filepath="$PROJECT_DIR$/../lab2/PartA/.idea/PartA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demos/sept27/.idea/Sept28Demo.iml" filepath="$PROJECT_DIR$/../demos/sept27/.idea/Sept28Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demos/sept29/.idea/Sept30Demo.iml" filepath="$PROJECT_DIR$/../demos/sept29/.idea/Sept30Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab1/.idea/lab1.iml" filepath="$PROJECT_DIR$/../lab1/.idea/lab1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab2/.idea/lab2.iml" filepath="$PROJECT_DIR$/../lab2/.idea/lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lab3.iml" filepath="$PROJECT_DIR$/.idea/lab3.iml" />
+    </modules>
+  </component>
+</project>
