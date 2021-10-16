@@ -20,7 +20,7 @@ checkIfLoggedIn();
             <p>First Name:<input type="text" name="fName" id="fName" onkeyup="upperFName(this.id)"/> <label id="labelFName" hidden> Enter a first name</label></p>
             <p>Last Name:<input type="text" name="lName" id="lName" onkeyup="upperLName(this.id)" /> <label id="labelLName" hidden> Enter a last name</label></p>
             <p>BirthDate:<input type="date" name="birthDate" id="birthDate"/> <label id="labelBirthDate" hidden> Enter the birthdate</label></p>
-            <p>Gender:<input type="text" name="gender" id="gender" maxlength="1" oninput="functionGender()" onblur=""/><label id="wrongGender"></label> <label id="labelGender" hidden> Enter the gender</label></p>
+            <p>Gender:<input type="text" name="gender" id="gender" maxlength="1" oninput="functionGender()"/><label id="wrongGender"></label> <label id="labelGender" hidden> Enter the gender</label></p>
             <p>Hire Date:<input type="date" name="hireDate" id="hireDate"/> <label id="labelHireDate" hidden> Enter the hire date</label></p>
             <p><input type="submit" name="addEmployee" value="Add an employee" id="addEmployee"/></p>
         </form>

@@ -22,7 +22,6 @@ function functionGender()
     var genderM = "M";
     var genderF = "F";
     var genderT = "T";
-    var nothing = "";
     if (!whatGender.includes(genderM)){
         document.getElementById("wrongGender").innerText = " Enter only M for male, F for female, T for transgender";
     }
