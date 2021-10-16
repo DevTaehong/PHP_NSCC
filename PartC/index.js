@@ -64,9 +64,9 @@ function NonUnderlineText(num)
         case 5:document.getElementById("labelEmail").style.textDecoration = "none";
             break;
     }
+    document.style.dateStyle = "full"
 }
-
-function validateForm() {
+ function validateForm() {
     let valid = 0;
 
     if (document.forms["myForm"].fName.value.length == 0) {
@@ -103,6 +103,5 @@ function validateForm() {
     if (valid != 1) {
         return true;
     }
-
 
 }
