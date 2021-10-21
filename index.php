@@ -1,5 +1,5 @@
 <?php
-header("location:R1.php"); //redirect
+header("location:mainLogin.html"); //redirect
 
 
 
