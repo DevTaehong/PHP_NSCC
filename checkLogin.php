@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    $conn = mysqli_connect("database", "root", "inet2005", "employees");
+    require_once("dbcon.php");
+    $conn = getDbConnection();
     if(!$conn){
         die("Unable to connect: ". mysqli_connect_error());
     }
