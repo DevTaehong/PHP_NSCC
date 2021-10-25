@@ -26,7 +26,7 @@
                 </td>
             </tr>
             </table>
-            <input type="submit" name="submit" id="submit" value="Test Register" />
+            <input type="submit" name="submit" id="submit" value="Register" />
 
         </form>
         <form method="post" action="mainLogin.html">
