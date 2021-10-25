@@ -16,7 +16,7 @@ checkIfLoggedIn();
             <input type="submit" class="button" name="submit" value="Submit Query">
         </form>
 
-        <form method="post" name="myForm" action="" onsubmit="return validateForm()">
+        <form method="post" name="myForm" action="R1.php" onsubmit="return validateForm()">
             <p>First Name:<input type="text" name="fName" id="fName" onkeyup="upperFName(this.id)"/> <label id="labelFName" hidden> Enter a first name</label></p>
             <p>Last Name:<input type="text" name="lName" id="lName" onkeyup="upperLName(this.id)" /> <label id="labelLName" hidden> Enter a last name</label></p>
             <p>BirthDate:<input type="date" name="birthDate" id="birthDate"/> <label id="labelBirthDate" hidden> Enter the birthdate</label></p>
@@ -38,7 +38,9 @@ checkIfLoggedIn();
                 <th>Delete</th>
             </thead>
             <tbody>
-                <?php
+            <?php
+                try
+                {
                     require_once("dbcon.php");
                     $conn = getDbConnection();
 
@@ -69,76 +71,95 @@ checkIfLoggedIn();
                         }
                     }
                     $sql = "SELECT COUNT(*) AS cntRows FROM employees";
-                    $result = mysqli_query($conn,$sql);
-                    $fetchResult = mysqli_fetch_array($result);
-                    $allCount = $fetchResult['cntRows'];
+
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+
+                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $allCount = $results['cntRows'];
 
                     if (empty($_POST['search']) && empty($_POST['fName']) && empty($_POST['lName']) && empty($_POST['birthDate'])
                         && empty($_POST['gender']) && empty($_POST['hireDate']))
                     {
                         $sql = "SELECT * FROM employees ORDER BY emp_no LIMIT $row, $rowPerPage";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
                     }
                     elseif (!empty($_POST['fName']) && !empty($_POST['lName']) && !empty($_POST['birthDate'])
                         && !empty($_POST['gender']) && !empty($_POST['hireDate']))
                     {
-                        $sql = "INSERT INTO employees (first_name, last_name, birth_date, gender, hire_date) VALUES ('";
-                        $sql .= $_POST['fName'];
-                        $sql .= "','";
-                        $sql .= $_POST['lName'];
-                        $sql .= "','";
-                        $sql .= $_POST['birthDate'];
-                        $sql .= "','";
-                        $sql .= $_POST['gender'];
-                        $sql .= "','";
-                        $sql .= $_POST['hireDate'];
-                        $sql .= "');";
+                        $sql = "INSERT INTO employees (first_name, last_name, birth_date, gender, hire_date) VALUES (:fName, :lName, :birthDate, :gender, :hireDate);";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bindParam(":fName", $_POST['fName']); //neutralizes any sql injection code
+                        $stmt->bindParam(":lName", $_POST['lName']); //neutralizes any sql injection code
+                        $stmt->bindParam(":birthDate", $_POST['birthDate']);
+                        $stmt->bindParam(":gender", $_POST['gender']);
+                        $stmt->bindParam(":hireDate", $_POST['hireDate']);
+
+                        $stmt->execute();
                     }
-                    else{
+                    else
+                    {
                         $sql = "SELECT * FROM employees WHERE first_name LIKE '%$search%' OR last_name LIKE '%$search%'";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
                     }
 
-                    $result = mysqli_query($conn,$sql);
                     $sno = $row + 1;
 
-                    if(!$result)
-                    {
-                        die("Could not retrieve records from database: " . mysqli_error($conn));
-                    }
-                    elseif (!empty($_POST['fName']) && !empty($_POST['lName']) && !empty($_POST['birthDate'])
+                    if (!empty($_POST['fName']) && !empty($_POST['lName']) && !empty($_POST['birthDate'])
                         && !empty($_POST['gender']) && !empty($_POST['hireDate']))
                     {
-                        $lastId = mysqli_insert_id($conn);
-                        echo "<h2>" . "Successfully added " . mysqli_affected_rows($conn) . " record(s).  Last inserted ID is: " . $lastId . "</h2>";
+                        $lastId = $conn->lastInsertId();
+                        $count = $stmt->rowCount();
+                        echo "<h2>" . "Successfully added " . $count . " record(s).  Last inserted ID is: " . $lastId . "</h2>";
                         $sql = "SELECT * FROM employees ORDER BY emp_no LIMIT $row, $rowPerPage";
-                        $result = mysqli_query($conn,$sql);
+                        $conn ->exec($sql);
                     }
-                    while($fetch = mysqli_fetch_assoc($result)):
-                ?>
-                    <tr>
-                        <td><?php echo $fetch['emp_no'] ?></td>
-                        <td><?php echo $fetch['birth_date'] ?></td>
-                        <td><?php echo $fetch['first_name'] ?></td>
-                        <td><?php echo $fetch['last_name'] ?></td>
-                        <td><?php echo $fetch['gender'] ?></td>
-                        <td><?php echo $fetch['hire_date'] ?></td>
-                        <td>
-                            <form name="selectForm" action="selectedEmployee.php" method="POST">
-                                <input type="hidden" name="emp_no" value="<?php echo $fetch['emp_no']; ?>" />
-                                <input type="submit" name="selectButton" value="Select" />
-                            </form>
-                        </td>
-                        <td>
-                            <form name="selectForm" action="deleteEmployee.php" method="POST">
-                                <input type="hidden" name="emp_no" value="<?php echo $fetch['emp_no']; ?>" />
-                                <input type="submit" name="deleteButton" value="Select" />
-                            </form>
-                        </td>
-                    </tr>
-                <?php
-                    $sno++;
-                    endwhile;
-                    mysqli_close($conn);
-                ?>
+
+                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    $results = $stmt->fetchALL();
+
+                    foreach ($results as $fetch)
+                    {
+            ?>
+                        <tr>
+                            <td><?php echo $fetch['emp_no'] ?></td>
+                            <td><?php echo $fetch['birth_date'] ?></td>
+                            <td><?php echo $fetch['first_name'] ?></td>
+                            <td><?php echo $fetch['last_name'] ?></td>
+                            <td><?php echo $fetch['gender'] ?></td>
+                            <td><?php echo $fetch['hire_date'] ?></td>
+                            <td>
+                                <form name="selectForm" action="selectedEmployee.php" method="POST">
+                                    <input type="hidden" name="emp_no" value="<?php echo $fetch['emp_no']; ?>" />
+                                    <input type="submit" name="selectButton" value="Select" />
+                                </form>
+                            </td>
+                            <td>
+                                <form name="selectForm" action="deleteEmployee.php" method="POST">
+                                    <input type="hidden" name="emp_no" value="<?php echo $fetch['emp_no']; ?>" />
+                                    <input type="submit" name="deleteButton" value="Select" />
+                                </form>
+                            </td>
+                        </tr>
+            <?php
+                        $sno++;
+                    }
+                }
+                catch (PDOException $ex){
+                    echo $ex->getMessage();
+                }
+                finally {
+                    //cleanup code
+                    //close the connection
+                    $conn = null;
+                }
+            ?>
             </tbody>
         </table>
         <form method="post" action="">

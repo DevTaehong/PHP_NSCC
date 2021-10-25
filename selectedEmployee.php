@@ -10,41 +10,50 @@ checkIfLoggedIn();
     </head>
     <body>
         <?php
-            require_once("dbcon.php");
-            $conn = getDbConnection();
-
-            $sql = "SELECT * FROM employees WHERE emp_no = ";
-            $sql .= $_POST['emp_no'];
-            $sql .= ";";
-
-            if(!empty($_POST['update']))
+            try
             {
-                $sql = "UPDATE employees SET first_name = '";
-                $sql .= $_POST['first_name'];
-                $sql .= "', last_name = '";
-                $sql .= $_POST['last_name'];
-                $sql .= "', birth_date = '";
-                $sql .= $_POST['birth_date'];
-                $sql .= "', gender = '";
-                $sql .= $_POST['gender'];
-                $sql .= "', hire_date = '";
-                $sql .= $_POST['hire_date'];
-                $sql .= "' WHERE emp_no = ";
+                require_once("dbcon.php");
+                $conn = getDbConnection();
+
+                $sql = "SELECT * FROM employees WHERE emp_no = ";
                 $sql .= $_POST['emp_no'];
                 $sql .= ";";
-            }
 
-            $result = mysqli_query($conn,$sql);
+                if(!empty($_POST['update']))
+                {
 
-            if (empty($_POST['update']))
-            {
-                $data = mysqli_fetch_assoc($result);
+                    $sql = "UPDATE employees SET first_name = :first_name, last_name = :last_name, birth_date = :birth_date, gender = :gender, hire_date = :hire_date WHERE emp_no = :emp_no";
+
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(":first_name", $_POST['first_name']);
+                    $stmt->bindParam(":last_name", $_POST['last_name']);
+                    $stmt->bindParam(":birth_date", $_POST['birth_date']);
+                    $stmt->bindParam(":gender", $_POST['gender']);
+                    $stmt->bindParam(":hire_date", $_POST['hire_date']);
+                    $stmt->bindParam(":emp_no", $_POST['emp_no']);
+
+                    $stmt->execute();
+                }
+
+                if (empty($_POST['update']))
+                {
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+
+                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+                }
+                else
+                {
+                    echo "<h2>" . "Successfully updated " . $stmt->rowCount() . " record(s)" . "</h2>";
+                }
             }
-            else
-            {
-                echo "<h2>" . "Successfully updated " . mysqli_affected_rows($conn) . " record(s)" . "</h2>";
+            catch (PDOException $ex){
+                echo $ex->getMessage();
             }
-             mysqli_close($conn);
+            finally {
+                $conn = null;
+            }
         ?>
         <form id="R" method="post" action="selectedEmployee.php">
             Employee's Number:<input type="text" name="emp_no" value="<?php echo $data['emp_no']; ?>" /><br>

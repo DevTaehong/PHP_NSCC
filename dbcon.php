@@ -17,15 +17,15 @@ function getDbConnection()
 
     //MYSQLI version of creating a connection
     //establish a db connection
-    $conn = mysqli_connect("$host", "$username", "$password", "$dbname");
-    if(!$conn)
-    {
-        die("Unable to connect to database: " . mysqli_connect_error());
-    }
+//    $conn = mysqli_connect("$host", "$username", "$password", "$dbname");
+//    if(!$conn)
+//    {
+//        die("Unable to connect to database: " . mysqli_connect_error());
+//    }
 
-//    //PDO version of creating a connection
-//    $conn = new PDO("mysql:host=$host;dbname=$dbname", "$username", $password);
-//    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //PDO version of creating a connection
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", "$username", $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $conn;
 }

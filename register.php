@@ -3,7 +3,6 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title></title>
-        <script src="java.js" type="text/javascript" ></script>
     </head>
     <body>
         <h1>Member Register</h1>
@@ -51,55 +50,58 @@
             }
         ?>
         <?php
-            require_once ('dbcon.php');
-            $conn = getDbConnection();
-
-            if (!empty($_POST['userName']) && !empty($_POST['userPwd']))
+            try
             {
+                require_once("dbcon.php");
+                $conn = getDbConnection();
 
-                $userName = $_POST['userName'];
-                $password = $_POST['userPwd'];
-
-                $sql = "SELECT * FROM users WHERE user_name = ";
-                $sql .= $_POST['userPwd'];
-                $sql .= ";";
-
-                $result = mysqli_query($conn,$sql);
-
-                if ($result){
-                    echo "The username is already in user\n";
-                }
-                else
+                if (!empty($_POST['userName']) && !empty($_POST['userPwd']))
                 {
-                    $chkStrongPwd = checkIsStrongPassword($password);
 
-                    if (!$chkStrongPwd)
+                    $userName = $_POST['userName'];
+                    $password = $_POST['userPwd'];
+
+                    $sql = "SELECT * FROM users WHERE user_name = '";
+                    $sql .= $userName;
+                    $sql .= "';";
+
+                    $stmt = $conn->prepare($sql);
+                    $result = $stmt->execute();
+
+                    if ($stmt->rowCount() > 0)
                     {
-                        echo 'Password should be at least 8 characters in length and should include 
-                        at least one upper case letter, one number, and one special character.';
+                        echo "The username is already in user\n";
                     }
                     else
                     {
-                        $hashedPwd = password_hash($_POST['userPwd'],PASSWORD_BCRYPT);
-
-                        $sql = "INSERT INTO users (user_name, user_pwd) VALUES ('";
-                        $sql .= $_POST['userName'];
-                        $sql .= "','";
-                        $sql .= $hashedPwd;
-                        $sql .= "');";
-
-                        $result = mysqli_query($conn,$sql);
-
-                        if (!$result){
-                            die("Unable to register: " . mysqli_error($conn));
+                        $chkStrongPwd = checkIsStrongPassword($password);
+                        if (!$chkStrongPwd)
+                        {
+                            echo 'Password should be at least 8 characters in length and should include 
+                            at least one upper case letter, one number, and one special character.';
                         }
-                        else{
+                        else
+                        {
+                            $hashedPwd = password_hash($_POST['userPwd'],PASSWORD_BCRYPT);
+
+                            $sql = "INSERT INTO users (user_name, user_pwd) VALUES (:user_name, :user_pwd);";
+
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bindParam(":user_name", $_POST['userName']);
+                            $stmt->bindParam(":user_pwd", $hashedPwd);
+                            $result=$stmt->execute();
+
                             echo "Successfully the username is added.";
-                        }
+                        }//end else
                     }//end else
-                }//end else
-            }//end if
-        mysqli_close($conn);
+                }//end if
+            }
+            catch (PDOException $ex){
+                echo $ex->getMessage();
+            }
+            finally {
+                $conn = null;
+            }
         ?>
     </body>
 </html>

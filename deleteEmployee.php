@@ -9,32 +9,31 @@ checkIfLoggedIn();
         <title>Update Employee</title>
     </head>
     <body>
-        <?php
-            require_once("dbcon.php");
-            $conn = getDbConnection();
-
-            $sql = "SELECT * FROM employees WHERE emp_no = ";
-            $sql .= $_POST['emp_no'];
-            $sql .= ";";
-
-            if(!empty($_POST['delete']))
+    <?php
+        if(!empty($_POST['delete']))
+        {
+            try
             {
-                $sql = "DELETE FROM employees WHERE emp_no = ";
-                $sql .= $_POST['emp_no'];
-                $sql .= ";";
+                require_once("dbcon.php");
+                $conn = getDbConnection();
+                $sql = "CALL deleteEmployee(:emp_no);";
 
-                $result = mysqli_query($conn,$sql);
-                if (!$result)
-                {
-                    die("Unable to delete record: " . mysqli_error($conn));
-                }
-                else
-                {
-                    echo "<h2>" . "Successfully deleted " . mysqli_affected_rows($conn) . " record(s)" . "</h2>";
-                }
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(":emp_no",$_POST['emp_no']);
+
+                $stmt->execute();
+                echo "<h2>" . "Successfully deleted " . $stmt->rowCount() . " record(s)" . "</h2>";
             }
-            mysqli_close($conn);
-        ?>
+            catch (PDOException $ex){
+                echo $ex->getMessage();
+            }
+            finally {
+                //cleanup code
+                //close the connection
+                $conn = null;
+            }
+        }
+    ?>
         <form method="post" action="deleteEmployee.php">
             <p>Employee ID:<input type="text" name="emp_no" value="<?php echo $_POST['emp_no'];?>"</p>
             <h2>Will you really delete it?</h2><input type="submit" name="delete" value="Delete">

@@ -1,41 +1,41 @@
 <?php
-    session_start();
-    require_once("dbcon.php");
-    $conn = getDbConnection();
-    
-    if(!$conn){
-        die("Unable to connect: ". mysqli_connect_error());
-    }
+    try
+    {
+        session_start();
+        require_once("dbcon.php");
+        $conn = getDbConnection();
+        $username = $_POST['loginUser'];
+        $pwd = $_POST['loginPwd'];
 
-    $username = $_POST['loginUser'];
-    $pwd = $_POST['loginPwd'];
+        $sql = "SELECT * FROM users WHERE user_name = :loginUser";
 
-    //sanitize our inputs
-    $username = stripslashes($username);
-    $username = mysqli_real_escape_string($conn, $username);
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":loginUser", $_POST['loginUser']);
+        $stmt->execute();
 
-    $sql = "SELECT * FROM users WHERE user_name = '$username'";
+        $count = $stmt->rowCount();
 
-    $result = mysqli_query($conn, $sql);
-    if(!$result){
-        die("An error occured in query: " . mysqli_error($conn));
-    }
-    mysqli_close($conn);
+        if($count == 1)
+        {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $count = mysqli_num_rows($result);
-
-    if($count == 1) {
-        //a row was returned....
-        $row = mysqli_fetch_assoc($result);
-        //get the hashed value from the user_pwd
-        $hash = $row['user_pwd'];
-
-        if(password_verify($pwd, $hash)){
-            //password matches, grant access
-            $_SESSION['LoggedInUser'] = $username;
-            header("location:R1.php");
+            $hash = $row['user_pwd'];
+            if(password_verify($pwd, $hash))
+            {
+                //password matches, grant access
+                $_SESSION['LoggedInUser'] = $username;
+                header("location:R1.php");
+            }
         }
+        echo "Incorrect Login<br/>";
+        echo "<a href='mainLogin.html'>Try Again</a>";
     }
-
-    echo "Incorrect Login<br/>";
-    echo "<a href='mainLogin.html'>Try Again</a>";
+    catch (PDOException $ex){
+        echo $ex->getMessage();
+    }
+    finally {
+        //cleanup code
+        //close the connection
+        $conn = null;
+    }
