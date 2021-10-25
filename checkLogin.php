@@ -1,8 +1,8 @@
 <?php
     session_start();
-
     require_once("dbcon.php");
     $conn = getDbConnection();
+    
     if(!$conn){
         die("Unable to connect: ". mysqli_connect_error());
     }
