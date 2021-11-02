@@ -60,7 +60,37 @@ class CustomerController
         include '../view/displayCustomers.php';
     }
 
+    public function deleteAction($custID){
+        $lastOperationResults = $this->model->deleteCustomer($custID);
 
+        //get the entire customer list again...this time
+        //containing the deleted customer you just finished
+        //deleting
+        $arrayOfCustomers = $this->model->getAllCustomers();
+
+        //choose the displayCustomers view to display the
+        //customers in the array
+        include '../view/displayCustomers.php';
+    }
+
+    public function createAction(){
+        //give the user a blank form to fill out
+        //no interaction with the model here
+        include '../view/createCustomer.php';
+    }
+
+    public function commitCreateAction($firstName, $lastName){
+        $lastOperationResults = $this->model->insertCustomer($firstName, $lastName);
+
+        //get the entire customer list again...this time
+        //containing the newly created customer you just finished
+        //creating
+        $arrayOfCustomers = $this->model->getAllCustomers();
+
+        //choose the displayCustomers view to display the
+        //customers in the array
+        include '../view/displayCustomers.php';
+    }
 }
 
 ?>

@@ -5,6 +5,7 @@
  */
 
 require_once '../model/data/iCustomerDataModel.php';
+
 class MySQLiCustomerDataModel implements iCustomerDataModel
 {
 
@@ -17,7 +18,7 @@ class MySQLiCustomerDataModel implements iCustomerDataModel
 
     public function connectToDB()
     {
-         $this->dbConnection = @new mysqli("localhost","root", "inet2005","sakila");
+         $this->dbConnection = @new mysqli("database","root", "inet2005","sakila");
          if (!$this->dbConnection)
          {
                die('Could not connect to the Sakila Database: ' .

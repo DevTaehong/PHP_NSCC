@@ -1,20 +1,11 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 require_once '../model/data/iCustomerDataModel.php'; //interface file must be included
-class PDOMySQLCustomerDataModel implements iCustomerDataModel
+class PDOSQLiteCustomerDataModel implements iCustomerDataModel
 {
-
     private $dbConnection; //<-the db connection is stored here after successful connection
     private $result; //<-results of queries are stored here
     private $stmt;
-
-    // because the class implements the iCustomerDataModel interface,
-    // the class MUST implement all of the functions defined in the
-    // interface...they are listed below
 
     public function connectToDB()
     {
@@ -23,12 +14,12 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
             //connects to mysql db via PDO
             //if connection is successful, the resulting connection
             //is stored in the $dbConnection member variable defined above
-            $this->dbConnection = new PDO("mysql:host=database;dbname=sakila","root","inet2005");
+            $this->dbConnection = new PDO("sqlite:../model/database/customers.sqlite");
             $this->dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $ex)
         {
-            die('Could not connect to the Sakila Database via PDO: ' . $ex->getMessage());
+            die('Could not connect to the SQLite Database via PDO: ' . $ex->getMessage());
         }
     }
 
@@ -38,8 +29,6 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         $this->dbConnection = null;
     }
 
-    //executes a select statement query to get all of the customers
-    //from the db....including related address data (via joins)
     public function selectCustomers()
     {
         // hard-coding for first ten rows
@@ -48,9 +37,8 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
 
         //build the SQL STATEMENT
         //notice the placeholders for the start and count
-        $selectStatement = "SELECT * FROM customer";
-        $selectStatement .= " LEFT JOIN address ON customer.address_id = address.address_id";
-        $selectStatement .= " ORDER BY customer_id DESC";
+        $selectStatement = "SELECT * FROM customers";
+        $selectStatement .= " ORDER BY custId DESC";
         $selectStatement .= " LIMIT :start,:count;";
 
         try
@@ -68,17 +56,15 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         {
             die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
         }
-
     }
-    
+
     public function selectCustomerById($custID)
     {
         //build select statment with WHERE clause to get
         //specific customer from db
         //note the :custID parameter placeholder...this is PDO-specific
-        $selectStatement = "SELECT * FROM customer";
-        $selectStatement .= " LEFT JOIN address ON customer.address_id = address.address_id";
-        $selectStatement .= " WHERE customer.customer_id = :custID;";
+        $selectStatement = "SELECT * FROM customers";
+        $selectStatement .= " WHERE custId = :custID;";
 
         try
         {
@@ -91,7 +77,7 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         }
         catch(PDOException $ex)
         {
-            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
+            die('Could not select records from SQLite Database via PDO: ' . $ex->getMessage());
         }
     }
 
@@ -112,15 +98,14 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         }
     }
 
-
-    public function updateCustomer($custID,$first_name,$last_name)
+    public function updateCustomer($custID, $first_name, $last_name)
     {
         //build an UPDATE sql statment with the data provided to the function
         //this should always include the customer id
         //note the parameters/placeholders in the statement
-        $updateStatement = "UPDATE customer";
-        $updateStatement .= " SET first_name = :firstName,last_name=:lastName";
-        $updateStatement .= " WHERE customer_id = :custID;";
+        $updateStatement = "UPDATE customers";
+        $updateStatement .= " SET fName = :firstName,lName=:lastName";
+        $updateStatement .= " WHERE custId = :custID;";
 
         try
         {
@@ -140,13 +125,13 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         }
         catch(PDOException $ex)
         {
-            die('Could not update record from Sakila Database via PDO: ' . $ex->getMessage());
+            die('Could not update record from SQLite Database via PDO: ' . $ex->getMessage());
         }
     }
 
     public function deleteCustomer($custID)
     {
-        $deleteStatement = "DELETE FROM customer WHERE customer_id = :custId;";
+        $deleteStatement = "DELETE FROM customers WHERE custId = :custId;";
 
         try {
             //prepare the statement
@@ -163,14 +148,14 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         }
         catch(PDOException $ex)
         {
-            die('Could not delete record from Sakila Database via PDO: ' . $ex->getMessage());
+            die('Could not delete record from SQLite Database via PDO: ' . $ex->getMessage());
         }
     }
 
     public function insertCustomer($first_name, $last_name)
     {
-        $insertStatement = "INSERT INTO customer (first_name, last_name, store_id, address_id) ";
-        $insertStatement .= "VALUES (:firstName, :lastName, 1, 1);";
+        $insertStatement = "INSERT INTO customers (fName, lName) ";
+        $insertStatement .= "VALUES (:firstName, :lastName);";
 
         try {
             //prepare
@@ -185,37 +170,36 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         }
         catch(PDOException $ex)
         {
-            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+            die('Could not insert record into SQLite Database via PDO: ' . $ex->getMessage());
         }
     }
-    
+
     public function fetchCustomerID($row)
     {
         //extract the specific customer id from the appropriate
         //column with the current row of customer data you are focused on
-        return $row['customer_id'];
+        return $row['custId'];
     }
 
     public function fetchCustomerFirstName($row)
     {
         //extract the specific first name from the appropriate
         //column with the current row of customer data you are focused on
-        return $row['first_name'];
+        return $row['fName'];
     }
 
     public function fetchCustomerLastName($row)
     {
         //extract the specific last name from the appropriate
         //column with the current row of customer data you are focused on
-        return $row['last_name'];
+        return $row['lName'];
     }
 
-    
     public function fetchAddressID($row)
     {
         //extract the specific related address id from the appropriate
         //column with the current row of customer data you are focused on
-        return $row['address_id'];
+        return $row['addressId'];
     }
 
     public function fetchAddress1($row)
@@ -231,9 +215,4 @@ class PDOMySQLCustomerDataModel implements iCustomerDataModel
         //column with the current row of customer data you are focused on
         return $row['address2'];
     }
-
-
-
 }
-
-?>

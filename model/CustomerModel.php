@@ -11,7 +11,7 @@ require_once '../model/Address.php';
 
 //require_once '../model/data/MySQLiCustomerDataModel.php';
 require_once '../model/data/PDOMySQLCustomerDataModel.php';
-
+//require_once '../model/data/PDOSQLiteCustomerDataModel.php';
 
 
 class CustomerModel 
@@ -27,7 +27,7 @@ class CustomerModel
 
         //$this->m_DataAccess = new MySQLiCustomerDataModel();
         $this->m_DataAccess = new PDOMySQLCustomerDataModel();
-
+//        $this->m_DataAccess = new PDOSQLiteCustomerDataModel();
     }
     
     public function __destruct()
@@ -140,7 +140,24 @@ class CustomerModel
                 $customerToUpdate->getLastName());
 
         //return message describing the result of update
-        return "$recordsAffected record(s) updated succesfully!";
+        return "$recordsAffected record(s) updated successfully!";
+    }
+
+    public function deleteCustomer($custID){
+        $this->m_DataAccess->connectToDB();
+
+        $recordsAffected = $this->m_DataAccess->deleteCustomer($custID);
+        //return message describing the result of update
+        return "$recordsAffected record(s) deleted successfully!";
+    }
+
+    public function insertCustomer($firstName, $lastName){
+        $this->m_DataAccess->connectToDB();
+
+        $recordsAffected = $this->m_DataAccess->insertCustomer($firstName, $lastName);
+
+        //return message describing the result of delete
+        return "$recordsAffected record(s) inserted successfully!";
     }
 }
 

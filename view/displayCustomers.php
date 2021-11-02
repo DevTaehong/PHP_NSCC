@@ -34,6 +34,7 @@ and open the template in the editor.
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Update</th>
+                    <th>Delete</th>
                     <th>Address ID</th>
                     <th>Address 1</th>
                     <th>Address 2</th>
@@ -52,6 +53,11 @@ and open the template in the editor.
                                     <img src="images/edit_icon.png" height="25px" width="25px"/>
                                 </a>
                             </td>
+                            <td>
+                                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?idDelete=<?php echo $customer->getID(); ?>">
+                                    <img src="images/delete.png" height="25px" width="25px"/>
+                                </a>
+                            </td>
                             <td><?php echo $customer->getAddress()->getID(); ?></td>
                             <td><?php echo $customer->getAddress()->getAddress(); ?></td>
                             <td><?php echo $customer->getAddress()->getAddress2(); ?></td>
@@ -61,6 +67,7 @@ and open the template in the editor.
                 ?>
             </tbody>
             <tfoot></tfoot>
-        </table>  
+        </table>
+        <a href="index.php?create=true">Add new customer</a>
     </body>
 </html>

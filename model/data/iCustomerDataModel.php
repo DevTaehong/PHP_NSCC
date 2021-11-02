@@ -18,6 +18,10 @@ interface iCustomerDataModel
     
     public function updateCustomer($custID,$first_name,$last_name);
 
+    public function deleteCustomer($custID);
+
+    public function insertCustomer($first_name, $last_name);
+
     // field access functions
     public function fetchCustomerID($row);
 
