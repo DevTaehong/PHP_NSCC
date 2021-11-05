@@ -15,15 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function (){
-    $coolString = 'Hello from Routes AGAIN.';
+Route::get('/hello', 'HelloController@index');
 
-    return view('subviews.hello', compact('coolString'));
-});
-
-Route::get('/myroute', function (){
-    $startingYear = 2021;
-
-    return view('subviews.myview', compact('startingYear'));
-});
+Route::get('/myroute', 'MyFirstController@index');
 
