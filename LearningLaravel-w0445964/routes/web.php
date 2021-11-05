@@ -16,10 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', function (){
-    return 'Hello';
+    return view('subviews.hello');
 });
 
 Route::get('/myroute', function (){
-    return 'It is my route.';
+    return view('subviews.myview');
 });
 
