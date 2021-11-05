@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 4 complete">
+    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 5 complete">
+      <change afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/nav.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/services.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HelloController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HelloController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
-      <workItem from="1636134153006" duration="3741000" />
+      <workItem from="1636134153006" duration="7064000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
@@ -181,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636136267131</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Video 5 complete">
+      <created>1636146764714</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636146764714</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +215,7 @@
     <MESSAGE value="Video 2 complete" />
     <MESSAGE value="Video 3 complete" />
     <MESSAGE value="Video 4 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Video 4 complete" />
+    <MESSAGE value="Video 5 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Video 5 complete" />
   </component>
 </project>

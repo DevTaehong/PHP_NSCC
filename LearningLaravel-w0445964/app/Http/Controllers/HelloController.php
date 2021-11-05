@@ -6,10 +6,22 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function about()
     {
-        $coolString = 'Hello from Controller.';
+        return view('about');
+    }
 
-        return view('subviews.hello', compact('coolString'));
+    public function services()
+    {
+        $services = [
+            'Cool Service',
+            'Another Cool service'
+        ];
+        return view('services', compact('services'));
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 }

@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'HelloController@index');
+Route::get('/about', 'HelloController@about');
+Route::get('/services', 'HelloController@services');
+Route::get('/contact', 'HelloController@contact');
+
+
+
+
+
+
 
 Route::get('/myroute', 'MyFirstController@index');
 
