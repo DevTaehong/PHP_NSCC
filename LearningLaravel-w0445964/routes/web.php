@@ -16,10 +16,14 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', function (){
-    return view('subviews.hello');
+    $coolString = 'Hello from Routes AGAIN.';
+
+    return view('subviews.hello', compact('coolString'));
 });
 
 Route::get('/myroute', function (){
-    return view('subviews.myview');
+    $startingYear = 2021;
+
+    return view('subviews.myview', compact('startingYear'));
 });
 

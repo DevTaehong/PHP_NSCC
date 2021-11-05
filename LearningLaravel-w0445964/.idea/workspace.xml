@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 2 complete">
-      <change afterPath="$PROJECT_DIR$/resources/views/subviews/hello.blade.php" afterDir="false" />
+    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 3 complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subviews/hello.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subviews/hello.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subviews/myview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subviews/myview.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +121,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="20R3vEAHtBMhaNqDkhQVciAFfRd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -138,6 +140,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/subviews" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -153,7 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
-      <workItem from="1636134153006" duration="900000" />
+      <workItem from="1636134153006" duration="1907000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
@@ -162,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636134703676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Video 3 complete">
+      <created>1636135366173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636135366173</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +195,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Video 2 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Video 2 complete" />
+    <MESSAGE value="Video 3 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Video 3 complete" />
   </component>
 </project>
