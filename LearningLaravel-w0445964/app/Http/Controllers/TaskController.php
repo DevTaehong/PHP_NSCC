@@ -20,6 +20,6 @@ class TaskController extends Controller
         \App\Task::create($data);
 
 
-        return redirect()->back();
+        return redirect()->back(); // Just going back to the page
     }
 }
