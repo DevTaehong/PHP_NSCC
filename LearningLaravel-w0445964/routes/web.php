@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/about', 'HelloController@about');
 Route::get('/services', 'HelloController@services');
 Route::get('/contact', 'HelloController@contact');
+Route::get('/tasks', 'HelloController@tasks');
 
 
 
