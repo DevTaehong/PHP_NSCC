@@ -16,9 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/about', 'HelloController@about');
-Route::get('/services', 'HelloController@services');
+Route::get('/service', 'ServiceController@index');
 Route::get('/contact', 'HelloController@contact');
-Route::get('/tasks', 'HelloController@tasks');
+Route::get('/task', 'TaskController@index');
+
+Route::post('/service', 'ServiceController@store');
+Route::post('/task', 'TaskController@store');
 
 
 
