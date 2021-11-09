@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 8 complete">
+      <change afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_11_09_024352_create_customers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f107b79a-c487-4e76-9b1d-928891025457.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f107b79a-c487-4e76-9b1d-928891025457.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f3c84539-e0de-4e4a-8999-b59996b63e33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f3c84539-e0de-4e4a-8999-b59996b63e33.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +179,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
-      <workItem from="1636134153006" duration="18532000" />
+      <workItem from="1636134153006" duration="18731000" />
+      <workItem from="1636425198086" duration="4151000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
@@ -223,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636165084097</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Video 8 complete">
+      <created>1636165748855</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636165748855</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +254,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
