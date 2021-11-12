@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete">
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/commandlinetools/Laravel_2021_11_12__4_46_p_m_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +173,7 @@
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
       <workItem from="1636134153006" duration="18731000" />
-      <workItem from="1636425198086" duration="19167000" />
+      <workItem from="1636425198086" duration="19226000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
