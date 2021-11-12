@@ -29,4 +29,26 @@ class CustomerController extends Controller
 
         return redirect('/customers');
     }
+
+    public function show(\App\Customer $customer)
+    {
+        return view('customer.show', compact('customer'));
+    }
+
+    public function edit(\App\Customer $customer)
+    {
+        return view('customer.edit', compact('customer'));
+    }
+
+    public function update(\App\Customer $customer)
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email'
+        ]);
+
+        $customer->update($data);
+
+        return redirect('/customers');
+    }
 }
