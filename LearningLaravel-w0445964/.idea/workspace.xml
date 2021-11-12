@@ -5,96 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete">
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/LaravelLabsQuestionnaire-w0445964.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.styleci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/public/web.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/server.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/webpack.mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/commandlinetools/Laravel_2021_11_12__4_46_p_m_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +179,7 @@
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
       <workItem from="1636134153006" duration="18731000" />
-      <workItem from="1636425198086" duration="18884000" />
+      <workItem from="1636425198086" duration="19167000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
