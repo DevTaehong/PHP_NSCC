@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete">
-      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +170,7 @@
       <updated>1635993802938</updated>
       <workItem from="1635993804810" duration="1033000" />
       <workItem from="1636134153006" duration="18731000" />
-      <workItem from="1636425198086" duration="19226000" />
+      <workItem from="1636425198086" duration="19574000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
@@ -273,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636748001226</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Video 14 complete">
+      <created>1636751872480</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636751872480</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
