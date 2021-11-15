@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use App\Questionnaire;
 
 class QuestionController extends Controller
@@ -26,4 +27,11 @@ class QuestionController extends Controller
     }
 
 
+    public function destroy(Questionnaire $questionnaire, Question $question)
+    {
+        $question->answers()->delete();
+        $question->delete();
+
+        return redirect($questionnaire->path());
+    }
 }

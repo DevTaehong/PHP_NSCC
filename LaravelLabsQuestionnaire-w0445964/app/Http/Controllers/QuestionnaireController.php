@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 class QuestionnaireController extends Controller
 {
@@ -23,8 +22,7 @@ class QuestionnaireController extends Controller
             'purpose' => 'required',
         ]);
 
-
-        $questionnaire = auth()->user()->questionnaire()->create($data);
+        $questionnaire = auth()->user()->questionnaires()->create($data);
 
         return redirect('/questionnaires/'.$questionnaire->id);
     }
@@ -32,7 +30,10 @@ class QuestionnaireController extends Controller
 
     public function show(\App\Questionnaire $questionnaire)
     {
-        $questionnaire->load('questions.answers');
+        $questionnaire->load('questions.answers.responses');
+
+
+
         return view('questionnaire.show', compact('questionnaire'));
     }
 }
