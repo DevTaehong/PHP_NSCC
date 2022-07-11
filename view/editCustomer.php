@@ -17,7 +17,7 @@ and open the template in the editor.
                 </label>  
             </p>
             <p>    
-		<label>First Name: 
+		<label>First Name:
                     <input type="text" name="firstName" id="firstName" value="<?php echo $currentCustomer->getFirstName();?>"/> 
                 </label>  
             </p>  
