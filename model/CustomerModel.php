@@ -10,8 +10,8 @@ require_once '../model/Address.php';
 //method in the constructor below
 
 //require_once '../model/data/MySQLiCustomerDataModel.php';
-require_once '../model/data/PDOMySQLCustomerDataModel.php';
-//require_once '../model/data/PDOSQLiteCustomerDataModel.php';
+//require_once '../model/data/PDOMySQLCustomerDataModel.php';
+require_once '../model/data/PDOSQLiteCustomerDataModel.php';
 
 
 class CustomerModel 
@@ -26,8 +26,8 @@ class CustomerModel
         //toggle between your choice by commenting out one of the options
 
         //$this->m_DataAccess = new MySQLiCustomerDataModel();
-        $this->m_DataAccess = new PDOMySQLCustomerDataModel();
-//        $this->m_DataAccess = new PDOSQLiteCustomerDataModel();
+//        $this->m_DataAccess = new PDOMySQLCustomerDataModel();
+        $this->m_DataAccess = new PDOSQLiteCustomerDataModel();
     }
     
     public function __destruct()
