@@ -50,6 +50,7 @@
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="email">Your Email</label>
                             <input name="survey[email]" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
@@ -63,6 +64,7 @@
                         <div>
                             <button class="btn btn-dark" type="submit">Complete Survey</button>
                         </div>
+
                     </div>
                 </div>
             </form>

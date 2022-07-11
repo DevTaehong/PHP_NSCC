@@ -35,12 +35,12 @@
                                         </a>
                                     </p>
                                 </div>
+
                             </li>
                         @endforeach
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

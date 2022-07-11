@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete" />
+    <list default="true" id="02bc5c5d-d575-409a-b2c1-df80e78c419d" name="Changes" comment="Video 14 complete">
+      <change afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/storage/debugbar/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/LaravelLabsQuestionnaire-w0445964.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/LaravelLabsQuestionnaire-w0445964.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/QuestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/app/Http/Controllers/QuestionnaireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/survey/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/resources/views/survey/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../LaravelLabsQuestionnaire-w0445964/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LearningLaravel-w0445964.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LearningLaravel-w0445964.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f107b79a-c487-4e76-9b1d-928891025457.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f107b79a-c487-4e76-9b1d-928891025457.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,6 +138,7 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="20R3vEAHtBMhaNqDkhQVciAFfRd" />
@@ -171,6 +189,14 @@
       <workItem from="1635993804810" duration="1033000" />
       <workItem from="1636134153006" duration="18731000" />
       <workItem from="1636425198086" duration="19574000" />
+      <workItem from="1637691855216" duration="15000" />
+      <workItem from="1637691890295" duration="3403000" />
+      <workItem from="1637726193691" duration="1285000" />
+      <workItem from="1638208180120" duration="27000" />
+      <workItem from="1638208269508" duration="9828000" />
+      <workItem from="1638237399629" duration="486000" />
+      <workItem from="1638283122995" duration="1531000" />
+      <workItem from="1638295674514" duration="2878000" />
     </task>
     <task id="LOCAL-00001" summary="Video 2 complete">
       <created>1636134703676</created>
